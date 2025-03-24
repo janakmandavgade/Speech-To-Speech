@@ -1,11 +1,3 @@
----
-title: Speech_To_Speech_Chatbot
-app_file: app.py
-sdk: gradio
-sdk_version: 4.14.0
----
-
-
 # Speech-to-Speech & Text Pipeline
 
 A Flask-based web application that allows users to record or upload an audio file and receive a natural language response from a Large Language Model (LLM). The application processes speech input (converting it to text), sends it to the LLM, and then converts the LLM’s text answer back to speech.
