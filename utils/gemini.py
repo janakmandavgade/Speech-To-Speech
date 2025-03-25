@@ -135,7 +135,7 @@ def querygemini(que):
 
           Maintain authenticity and clarity, demonstrating how your unique background makes you an ideal candidate.
         """),
-      contents=f"Answer in 50 words. Query : {que}"
+      contents=f"Answer in 50 words for any query that you know the answer to. \n Query : {que}"
     )
 
     print(f"1 : {response}")
