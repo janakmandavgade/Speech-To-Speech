@@ -61,7 +61,7 @@ def save_audio_file(audio):
         sound.export(mp3_filename, format='mp3')
         # os.remove(mp3_filename.replace('.mp3', '.wav'))
         
-        return mp3_filename
+        return flac_filename
     except Exception as e:
         raise Exception(f"Error saving audio: {str(e)}")
 
