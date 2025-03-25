@@ -55,10 +55,10 @@ def save_audio_file(audio):
         sf.write(flac_filename, y, rate, format='FLAC')
         
         # Save as MP3 (requires soundfile and pydub)
-        import pydub
-        sf.write(mp3_filename.replace('.mp3', '.wav'), y, rate)
-        sound = pydub.AudioSegment.from_wav(mp3_filename.replace('.mp3', '.wav'))
-        sound.export(mp3_filename, format='mp3')
+        # import pydub
+        # sf.write(mp3_filename.replace('.mp3', '.wav'), y, rate)
+        # sound = pydub.AudioSegment.from_wav(mp3_filename.replace('.mp3', '.wav'))
+        # sound.export(mp3_filename, format='mp3')
         # os.remove(mp3_filename.replace('.mp3', '.wav'))
         
         return flac_filename
@@ -104,4 +104,5 @@ demo = gr.Interface(
     flagging_mode='never'
 )
 
-app = gr.mount_gradio_app(app, demo, path="/")
+# app = gr.mount_gradio_app(app, demo, path="/")
+demo.launch()
