@@ -13,9 +13,13 @@ app = FastAPI()
 
 @app.get('/health')
 async def root():
-    return "App is running at /gradio",200
+    """Health check for app"""
+    return "App is running at /",200
 
 def getAnswer(filepath):
+    """
+    Takes in a audio file path and generates LLM Responses.
+    """
     if not os.path.exists(filepath):
         raise Exception("Audio file not found!")
     
@@ -30,6 +34,10 @@ def getAnswer(filepath):
     return output
 
 def save_audio_file(audio):
+    """
+    Save audio file in directory and return path.
+    """
+
     if audio is None:
         raise Exception("No audio input detected.")
     
@@ -58,6 +66,10 @@ def save_audio_file(audio):
         raise Exception(f"Error saving audio: {str(e)}")
 
 def generate_audio_output(flac_filepath):
+    """
+    Convert the answer to audio data in bytes and return to gradio for display.
+    """
+
     ans = getAnswer(flac_filepath)
     audio_bytes = query_fbookmmsttsen({"inputs": ans})
     if not audio_bytes:
@@ -68,6 +80,9 @@ def generate_audio_output(flac_filepath):
         raise Exception(f"Error processing audio output: {str(e)}")
 
 def process_audio(audio):
+    """Used to complete the pipeline of saving input audio file, coverting to text, 
+    then getting LLM response and converting that to audio."""
+
     try:
         flac_filepath = save_audio_file(audio)
         audio_bytes, ai_gen_text = generate_audio_output(flac_filepath)

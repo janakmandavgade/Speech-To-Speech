@@ -12,18 +12,17 @@ A Flask-based web application that allows users to record or upload an audio fil
 
 ## Prerequisites
 
-- Python 3.8+
+- Python 3.11+
 - [pip](https://pip.pypa.io/)
 - [virtualenv](https://virtualenv.pypa.io/) (recommended)
-- FFmpeg installed on your system (for audio processing)
 
 ## Installation
 
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/yourusername/your-repo.git
-   cd your-repo
+   git clone https://github.com/janakmandavgade/Speech-To-Speech.git
+   cd Speech-To-Speech
     ```
 2. **Create a virtual environment and activate it:**
 
@@ -80,6 +79,9 @@ Create a .env file in the root directory and add below configuration variables.
 4. Listen to the Response:
 - The application will display the text response and provide an audio playback option for the LLM's answer.
 
+## Deployed On Render.com: 
+- Application is now live at: https://speech-to-speech-fct2.onrender.com 
+- Test It out !!
 
 ## Contact
 
