@@ -104,5 +104,5 @@ demo = gr.Interface(
     flagging_mode='never'
 )
 
-# app = gr.mount_gradio_app(app, demo, path="/")
-demo.launch()
+app = gr.mount_gradio_app(app, demo, path="/")
+#demo.launch()
